@@ -41,6 +41,7 @@ function capToFront(string) {
 let arrayUno=[];   
 let arrayDos=[];
 let array=[];
+let arrayTres=[]
 array=string.split("")
 for(let i=0;i<array.length;i++){
    if(array[i]===array[i].toUpperCase()){
@@ -50,7 +51,8 @@ for(let i=0;i<array.length;i++){
    arrayDos.push(array[i])
  }  
 }
-
+arrayTres=arrayUno.concat(arrayDos);
+return arrayTres.join("")
 }
 
 function asAmirror(frase) {
