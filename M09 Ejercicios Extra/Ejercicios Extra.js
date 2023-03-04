@@ -40,7 +40,7 @@ function capToFront(string) {
    // Tu código:
 let arrayUno=[];   
 let arrayDos=[];
-let array=[];
+let arrayTotal=[];
 let arrayTres=[]
 array=string.split("")
 for(let i=0;i<array.length;i++){
@@ -52,9 +52,9 @@ for(let i=0;i<array.length;i++){
  }  
 }
 arrayTres=arrayUno.concat(arrayDos);
-return arrayTres.join("")
+return arrayTotal.join("")
 }
-
+console.log(capToFront("chicosHOLA"))
 function asAmirror(frase) {
    // Recibes una frase. Tu tarea es retornar un nuevo string en el que el orden de las palabras sea el mismo.
    // La diferencia es que cada palabra estará escrita al inverso.
