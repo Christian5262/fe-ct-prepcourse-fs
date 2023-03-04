@@ -1,27 +1,56 @@
 /*⚠️ NO MODIFIQUES EL NOMBRE DE LAS DECLARACIONES ⚠️*/
-
+// objeto={D:1,B:2,C:3}
+// let arregloObj=[[],[],[]]
+               //   0  1  2
 function deObjetoAarray(objeto) {
    // Recibes un objeto. Tendrás que crear un arreglo de arreglos.
    // Cada elemento del arreglo padre será un nuevo arreglo que contendrá dos elementos.
    // Estos elementos debe ser cada par clave:valor del objeto recibido.
    // [EJEMPLO]: {D: 1, B: 2, C: 3} ---> [['D', 1], ['B', 2], ['C', 3]].
    // Tu código:
+   let arr=[];
+   for(let i in objeto){
+      arr.push([i,objeto[i]])
+   }
+return arr;
 }
-
+//PASOS
+//Recorro el
 function numberOfCharacters(string) {
    // La función recibe un string. Debes recorrerlo y retornar un objeto donde cada propiedad es una de las
    // letras del string, y su valor es la cantidad de veces que se repite en el string.
    // Las letras deben estar en orden alfabético.
    // [EJEMPLO]: "adsjfdsfsfjsdjfhacabcsbajda" ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 }
    // Tu código:
+   let objeto={}
+   for(let letra of string){
+      if(objeto.hasOwnProperty(letra)){
+         objeto[letra]+=1
+      }
+      else objeto[letra]=1
+   }
+   return objeto
 }
-
+console.log(numberOfCharacters("dsdasdsad"))
 function capToFront(string) {
    // Recibes un string con algunas letras en mayúscula y otras en minúscula.
    // Debes enviar todas las letras en mayúscula al comienzo del string.
    // Retornar el string.
    // [EJEMPLO]: soyHENRY ---> HENRYsoy
    // Tu código:
+let arrayUno=[];   
+let arrayDos=[];
+let array=[];
+array=string.split("")
+for(let i=0;i<array.length;i++){
+   if(array[i]===array[i].toUpperCase()){
+      arrayUno.push(array[i])
+   }
+ else {
+   arrayDos.push(array[i])
+ }  
+}
+
 }
 
 function asAmirror(frase) {
