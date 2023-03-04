@@ -31,7 +31,7 @@ function numberOfCharacters(string) {
    }
    return objeto
 }
-console.log(numberOfCharacters("dsdasdsad"))
+
 function capToFront(string) {
    // Recibes un string con algunas letras en mayúscula y otras en minúscula.
    // Debes enviar todas las letras en mayúscula al comienzo del string.
@@ -52,26 +52,48 @@ for(let i=0;i<array.length;i++){
  }  
 }
 arrayTres=arrayUno.concat(arrayDos);
-return arrayTotal.join("")
+return arrayTres.join("")
 }
-console.log(capToFront("chicosHOLA"))
+
+//frase="hola mundo" tiene que devolver aloh odnum
+//
+//
 function asAmirror(frase) {
    // Recibes una frase. Tu tarea es retornar un nuevo string en el que el orden de las palabras sea el mismo.
    // La diferencia es que cada palabra estará escrita al inverso.
    // [EJEMPLO]: "The Henry Challenge is close!"  ---> "ehT yrneH egnellahC si !esolc"
    // Tu código:
+   let arreglo=[]
+   let array=frase.split("").reverse().join("")
+   let nuevoArr=array.split(" ");
+   for(let i=nuevoArr.length-1;i>=0;i--){
+      arreglo.push(nuevoArr[i])
+   }
+   return arreglo.join(" ")
 }
 
 function capicua(numero) {
    // Si el número que recibes es capicúa debes retornar el string: "Es capicua".
    // Caso contrario: "No es capicua".
    // Tu código:
+   let numeroString=numero.toString();
+   if(numeroString.split("").reverse().join("")===numeroString){
+      return "Es capicua"
+   }
+   else{
+      return "No es capicua"
+   }
 }
 
 function deleteAbc(string) {
    // Tu tarea es eliminar las letras "a", "b" y "c" del string recibido.
    // Retorna el string sin estas letras.
    // Tu código:
+   let arr=string.split("");
+   let nuevoArr=arr.filter((elemento)=>{
+      return elemento!=="a"&&elemento!=="b"&&elemento!=="c"
+   })
+   return nuevoArr.join("")
 }
 
 function sortArray(arrayOfStrings) {
@@ -80,6 +102,21 @@ function sortArray(arrayOfStrings) {
    // de la longitud de cada string.
    // [EJEMPLO]: ["You", "are", "beautiful", "looking"]  ---> [“You", "are", "looking", "beautiful"]
    // Tu código:
+   let booleano=true;
+   while(booleano){
+      booleano=false;
+      for(let i = 0; i < arrayOfStrings.length-1;i++){
+         if(arrayOfStrings[i].length>arrayOfStrings[i+1].length){
+            let guardar=arrayOfStrings[i];
+            arrayOfStrings[i]=arrayOfStrings[i+1]
+            arrayOfStrings[i+1]=guardar
+            booleano=true;
+            
+         }
+      }
+   }
+   return arrayOfStrings;
+   
 }
 
 function buscoInterseccion(array1, array2) {
@@ -89,6 +126,13 @@ function buscoInterseccion(array1, array2) {
    // Si no tienen elementos en común, retornar un arreglo vacío.
    // [PISTA]: los arreglos no necesariamente tienen la misma longitud.
    // Tu código:
+   let array=[];
+   let arrConcatenado=array1.concat(array2).sort();
+   for(let i=0;i<arrConcatenado.length;i++){
+      if(arrConcatenado[i]===arrConcatenado[i+1])
+         array.push(arrConcatenado[i])
+   }
+   return array
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
